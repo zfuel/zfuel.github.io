@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ZFuel Discount Generator</title>
+
+    <link rel="Z Fuel Icon" href="images/z_fuel.png">
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- build:css styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="/bower_components/select2/dist/css/select2.css" />
+    <link rel="stylesheet" href="/bower_components/select2-bootstrap-theme/dist/select2-bootstrap.css" />
+    <link rel="stylesheet" href="/bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:css styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+    
+  </head>
+  <body>
+    
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" rel="home" href="#">
+            <img style="max-width:100px; margin-top: -7px;" src="images/z_logo.png">
+          </a>
+          <a class="navbar-brand" href="#">Z Discount Generator</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Page-->
+    <div class="container">
+      <div class="row">
+        <div class=" col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
+          <div class="jumbotron barcode-container">
+            <img class="center-block barcode-img" id="barcode" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class=" col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
+          <form id="dicountgen-form">
+            <div class="form-group">
+              <label for="discount-amount-selector">Discount</label>
+              <select name="discount" class="form-control" id="discount-amount-selector">
+                            <option value="4">4 cents</option>
+                            <option value="6">6 cents</option>
+                            <option value="10">10 cents</option>
+                            <option value="20">20 cents</option>
+                            <option value="30">30 cents</option>
+                            <option value="40" selected="selected">40 cents</option>
+                        </select>
+            </div>
+            <div class="form-group">
+              <label for="cd-store-selector">Countdown Store</label>
+              <select name="store" id="cd-store-selector" style="width: 100%">
+                  <option value='9518'>Amberley Countdown</option><option value='9442'>Andersons Bay Countdown</option><option value='9181'>Ashburton Countdown</option><option value='9428'>Auckland Airport Countdown</option><option value='9094'>Auckland City Countdown</option><option value='9283'>Auckland Metro Countdown</option><option value='9215'>Aviemore Drive Countdown</option><option value='9478'>Avonhead Countdown</option><option value='9134'>Bayfair Countdown</option><option value='9462'>Bayfair Girven Rd</option><option value='9177'>Beachlands Countdown</option><option value='9143'>Bethlehem Countdown</option><option value='9145'>Birkenhead Countdown</option><option value='9160'>Blenheim Countdown</option><option value='9211'>Blockhouse Bay Countdown</option><option value='9141'>Botany Downs Countdown</option><option value='9465'>Broadway Countdown</option><option value='9224'>Browns Bay Countdown</option><option value='9050'>Bureta Park Countdown</option><option value='9093'>Bush Inn Countdown</option><option value='9066'>Cable Car Lane Countdown</option><option value='9153'>Cambridge Countdown</option><option value='9130'>Carlyle Countdown</option><option value='9110'>Central Mall Countdown</option><option value='9221'>Chartwell Countdown</option><option value='9090'>Christchurch Airport Countdown</option><option value='9176'>Church Cnr Countdown</option><option value='9097'>Church St Timaru Countdown</option><option value='9473'>Claudelands Countdown</option><option value='9180'>Colombo St Countdown</option><option value='9031'>Crofton Downs Countdown</option><option value='9032'>Dargaville Countdown</option><option value='9432'>Dinsdale Countdown</option><option value='9190'>Dunedin Central Countdown</option><option value='9524'>Dunedin South Countdown</option><option value='9178'>Eastgate Countdown</option><option value='9173'>Fairy Springs Countdown</option><option value='9501'>Feilding Countdown</option><option value='9292'>Ferrymead Countdown</option><option value='9572'>Ferrymead Countdown</option><option value='9113'>Fraser Cove Countdown</option><option value='9301'>Fresh Choice Barrington</option><option value='9377'>Fresh Choice Geraldine</option><option value='9372'>Fresh Choice Glen Eden</option><option value='9391'>Fresh Choice Green Island</option><option value='9375'>Fresh Choice Greytown</option><option value='9374'>Fresh Choice Half Moon Bay</option><option value='9376'>Fresh Choice Leamington</option><option value='9397'>Fresh Choice Leeston</option><option value='9336'>Fresh Choice Mangere</option><option value='9337'>Fresh Choice Merivale</option><option value='9311'>Fresh Choice Nelson City</option><option value='9390'>Fresh Choice Omokoroa</option><option value='9335'>Fresh Choice Oxford</option><option value='9339'>Fresh Choice Parklands</option><option value='9363'>Fresh Choice Picton</option><option value='9340'>Fresh Choice Queenstown</option><option value='9378'>Fresh Choice Ranui</option><option value='9312'>Fresh Choice Richmond</option><option value='9349'>Fresh Choice Roslyn</option><option value='9604'>Fresh Choice Ruakaka</option><option value='9314'>Fresh Choice Takaka</option><option value='9362'>Fresh Choice Te Anau</option><option value='9346'>Fresh Choice Te Awamutu</option><option value='9379'>Fresh Choice Waimauku</option><option value='9526'>Gisborne Countdown</option><option value='9163'>Glenfield Countdown</option><option value='9209'>Glenfield Downing St Countdown</option><option value='9092'>Gore Countdown</option><option value='9128'>Greenlane Countdown</option><option value='9125'>Greerton Countdown</option><option value='9217'>Grey Lynn Central Countdown</option><option value='9068'>Grey Lynn Countdown</option><option value='9469'>Greymouth Countdown</option><option value='9033'>Hamilton Bridge St Countdown</option><option value='9192'>Hamilton Countdown</option><option value='9138'>Hastings Countdown</option><option value='9060'>Hauraki Corner Countdown</option><option value='9187'>Hawera Countdown</option><option value='9534'>Helensville Countdown</option><option value='9194'>Henderson Countdown</option><option value='9142'>Highland Park Countdown</option><option value='9551'>Hobsonville Countdown</option><option value='9121'>Hornby Countdown</option><option value='9243'>Howick Countdown</option><option value='9164'>Huntly Countdown</option><option value='9191'>Invercargill Countdown</option><option value='9547'>Johnsonville Countdown</option><option value='9158'>Johnsonville Mall Countdown</option><option value='9175'>Kaiapoi Countdown</option><option value='9117'>Kaikohe Countdown</option><option value='9530'>Karori Countdown</option><option value='9453'>Katikati Countdown</option><option value='9146'>Kelston Countdown</option><option value='9424'>Kelvin Grove Countdown</option><option value='9502'>Kerikeri Countdown</option><option value='9474'>Kilbirnie Countdown</option><option value='9102'>Levin Countdown</option><option value='9038'>Lincoln Road Countdown</option><option value='9156'>Lower Hutt Countdown</option><option value='9140'>Lynfield Countdown</option><option value='9149'>Lynnmall Countdown</option><option value='9447'>Maidstone Countdown</option><option value='9185'>Mailer St Countdown</option><option value='9248'>Mairangi Bay Countdown</option><option value='9486'>Mangere East Countdown</option><option value='9099'>Mangere Mall Countdown</option><option value='9096'>Manukau City Mall Countdown</option><option value='9161'>Manukau Countdown</option><option value='9400'>Manurewa Countdown</option><option value='9493'>Marton Countdown</option><option value='9487'>Massey Countdown</option><option value='9098'>Masterton Countdown</option><option value='9120'>Matamata Countdown</option><option value='9444'>Meadowbank Countdown</option><option value='9458'>Meadowlands Countdown</option><option value='9198'>Milford Countdown</option><option value='9169'>Moorhouse Ave Countdown</option><option value='9114'>Morrinsville Countdown</option><option value='9184'>Mosgiel Countdown</option><option value='9495'>Motueka Countdown</option><option value='9034'>Mount Roskill Countdown</option><option value='9235'>Mt Eden Countdown</option><option value='9193'>Mt Wellington Countdown</option><option value='9136'>Napier Countdown</option><option value='9148'>Nawton Countdown</option><option value='9159'>Nelson Countdown</option><option value='9485'>New Brighton Countdown</option><option value='9528'>New Plymouth Central Countdown</option><option value='9241'>Newmarket Countdown</option><option value='9508'>Newtown Countdown</option><option value='9477'>Northcote Countdown</option><option value='9174'>Northlands Countdown</option><option value='9064'>Northwest Countdown</option><option value='9196'>Northwood Countdown</option><option value='9182'>Oamaru Countdown</option><option value='9091'>Onehunga Countdown</option><option value='9061'>Orewa Countdown</option><option value='9498'>Otaki Countdown</option><option value='9430'>Otorohanga Countdown</option><option value='9011'>Paeroa Countdown</option><option value='9105'>Paihia Central Countdown</option><option value='9204'>Pakuranga Countdown</option><option value='9155'>Palmerston North Countdown</option><option value='9144'>Papakura Countdown</option><option value='9472'>Papamoa Countdown</option><option value='9106'>Papatoetoe Countdown</option><option value='9460'>Paraparaumu Countdown</option><option value='9535'>Petone Countdown</option><option value='9057'>Ponsonby Countdown</option><option value='9154'>Porirua Countdown</option><option value='9123'>Pt Chevalier Countdown</option><option value='9199'>Pukekohe Countdown</option><option value='9107'>Pukekohe South Countdown</option><option value='9095'>Putaruru Countdown</option><option value='9489'>Queensgate Countdown</option><option value='9058'>Queenstown Countdown</option><option value='9457'>Rangiora Central Countdown</option><option value='9284'>Rangiora East Countdown</option><option value='9119'>Rangitikei St Countdown</option><option value='9212'>Redwoodtown Countdown</option><option value='9560'>Redwoodtown Countdown</option><option value='9048'>Regent Countdown</option><option value='9581'>Repl Test Pel.</option><option value='9131'>Rolleston Countdown</option><option value='9014'>Roselands Countdown</option><option value='9189'>Rotorua Countdown</option><option value='9504'>Silverdale Countdown</option><option value='9425'>Spotswood Countdown</option><option value='9578'>Springlands Countdown</option><option value='9103'>St James Countdown</option><option value='9521'>St Johns Countdown</option><option value='9216'>St Lukes Countdown</option><option value='9168'>Stoke Countdown</option><option value='9062'>Stratford Countdown</option><option value='9197'>Sunnynook Countdown</option><option value='9368'>Supervalue Avondale</option><option value='9348'>Supervalue Bellblock</option><option value='9601'>Supervalue Cannons Creek</option><option value='9342'>Supervalue Edgecumbe</option><option value='9302'>Supervalue Edgeware Village</option><option value='9325'>Supervalue Featherston</option><option value='9303'>Supervalue Fendalton</option><option value='9313'>Supervalue Flagstaff</option><option value='9347'>Supervalue Flatbush</option><option value='9356'>Supervalue Hall Avenue</option><option value='9343'>Supervalue Kaiti</option><option value='9304'>Supervalue Lincoln Road</option><option value='9380'>Supervalue Lyttelton</option><option value='9344'>Supervalue Methven</option><option value='9367'>Supervalue Milton</option><option value='9355'>Supervalue Ngaruawahia</option><option value='9328'>Supervalue Otautau</option><option value='9351'>Supervalue Paetiki</option><option value='9361'>Supervalue Palomino</option><option value='9364'>Supervalue Papakura</option><option value='9603'>Supervalue Parkwood</option><option value='9352'>Supervalue Pauanui</option><option value='9329'>Supervalue Plaza</option><option value='9605'>Supervalue Pyes Pa</option><option value='9371'>Supervalue Raglan</option><option value='9345'>Supervalue Reefton</option><option value='9316'>Supervalue Renwick</option><option value='9330'>Supervalue Riverton</option><option value='9331'>Supervalue Roxburgh</option><option value='9359'>Supervalue Seddon</option><option value='9306'>Supervalue Stanmore</option><option value='9373'>Supervalue Stonefields</option><option value='9307'>Supervalue Sumner</option><option value='9321'>Supervalue Sunny Beach</option><option value='9360'>Supervalue Takanini</option><option value='9369'>Supervalue Tba</option><option value='9366'>Supervalue Te Kuiti</option><option value='9341'>Supervalue Tinwald</option><option value='9353'>Supervalue Titirangi</option><option value='9358'>Supervalue Tuakau</option><option value='9308'>Supervalue Wairakei</option><option value='9334'>Supervalue Waiuku</option><option value='9350'>Supervalue Wanganui</option><option value='9318'>Supervalue Woburn</option><option value='9434'>Sylvia Park Countdown</option><option value='9202'>Takanini Countdown</option><option value='9237'>Takapuna Countdown</option><option value='9456'>Taupo Countdown</option><option value='9162'>Tauranga Countdown</option><option value='9475'>Tawa Countdown</option><option value='9452'>Te Aroha Countdown</option><option value='9451'>Te Atatu Countdown</option><option value='9206'>Te Atatu South Countdown</option><option value='9449'>Te Awamutu Countdown</option><option value='9448'>Te Puke Countdown</option><option value='9282'>Te Rapa Countdown</option><option value='9100'>The Palms Countdown</option><option value='9133'>The Valley Countdown</option><option value='9529'>Three Kings Countdown</option><option value='9124'>Tikipunga Countdown</option><option value='9183'>Timaru Countdown</option><option value='9541'>Tokoroa Countdown</option><option value='9427'>Trafalgar Park Countdown</option><option value='9157'>Upper Hutt Countdown</option><option value='9129'>Victoria Ave Countdown</option><option value='9063'>Vogeltown Countdown</option><option value='9557'>Waiheke Island Countdown</option><option value='9012'>Waihi Countdown</option><option value='9522'>Waikanae Countdown</option><option value='9429'>Waikiwi Countdown</option><option value='9188'>Wainuiomata Countdown</option><option value='9463'>Waipukurau Countdown</option><option value='9013'>Waitangi Countdown</option><option value='9151'>Wanganui Countdown</option><option value='9533'>Warkworth Countdown</option><option value='9147'>Westgate Countdown</option><option value='9466'>Westport Countdown</option><option value='9170'>Whakatane Countdown</option><option value='9242'>Whangaparaoa Countdown</option><option value='9195'>Whangarei Countdown</option><option value='9049'>Whitianga Countdown</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="datetimepicker">Valid Until</label>
+              <div class='input-group date' id='datetimepicker'>
+                <input id="datetimepickerinput" name="expireDate" type='text' class="form-control" />
+                <span class="input-group-addon">
+                    <span class="glyphicon glyphicon-calendar"></span>
+                </span>
+              </div>
+            </div>
+
+            <button type="submit" class="center-block btn btn-primary">Generate Barcode</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+    <script>
+      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+      e.src='https://www.google-analytics.com/analytics.js';
+      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+      ga('create','UA-XXXXX-X');ga('send','pageview');
+    </script>
+
+    <!-- build:js scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <script src="/bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="/bower_components/JsBarcode/JsBarcode.all.min.js"></script>
+    <script src="/bower_components/select2/dist/js/select2.js"></script>
+    <script src="/bower_components/moment/moment.js"></script>
+    <script src="/bower_components/moment-timezone/builds/moment-timezone-with-data-2010-2020.js"></script>
+    <script src="/bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+    
+    <!-- build:js scripts/main.js -->
+    <script src="scripts/main.js"></script>
+    <!-- endbuild -->
+  </body>
+</html>
