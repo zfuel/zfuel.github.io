@@ -162,9 +162,11 @@ gulp.task('default', ['clean'], () => {
   gulp.start('build');
 });
 
-gulp.task('deploy-gh-pages', () => {
-  return gulp.src('./dist/**/*')
-    .pipe(ghPages( {
-      branch: "master"
-    } ));
-})
+// git subtree push --prefix dist origin master
+
+// gulp.task('deploy-gh-pages', () => {
+//   return gulp.src('./dist/**/*')
+//     .pipe(ghPages( {
+//       branch: "master"
+//     } ));
+// })
