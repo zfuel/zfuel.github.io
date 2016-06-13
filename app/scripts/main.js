@@ -3,6 +3,7 @@ var tag_selectedStoreId = 'selectedStoreId';
 $(document).ready(function () {
     var storesel = $('#cd-store-selector');
     var datesel = $('#datetimepicker');
+    var datesel2 = $('#datepicker');
     var discountsel = $('#discount-amount-selector');
     var genform = $('#dicountgen-form');
 
@@ -17,18 +18,26 @@ $(document).ready(function () {
         $(storesel)
     }
 
-    $(datesel).datetimepicker({
-        format: 'DD/MM/YYYY',
-        useCurrent: false,
-        minDate: moment(),
-        defaultDate: moment().add(Math.floor(Math.random() * (25 - 15 + 1)) + 15, 'days')
-    });
+    // $(datesel).datetimepicker({
+    //     format: 'DD/MM/YYYY',
+    //     useCurrent: false,
+    //     minDate: moment(),
+    //     defaultDate: newValidRandomMoment()
+    // });
+
+    datesel2.pickadate({
+        min : moment().toDate(),
+        onStart : function(){
+            this.set('select', newValidRandomMoment().toDate());
+        }
+    })
 
     $(genform).on('submit', function (event) {
         event.preventDefault();
 
         var selectedDiscount = $(discountsel).val();
-        var selectedDate = $(datesel).data('DateTimePicker').date();
+        var selectedDate = moment(datesel2.data('pickadate').get('select'))
+        // var selectedDate = $(datesel).data('DateTimePicker').date();
         var selectedStore = $(storesel).val()
 
         var barcodeText = createBarcodeText(selectedDate, selectedStore, selectedDiscount)
@@ -37,9 +46,9 @@ $(document).ready(function () {
         return false;
     });
 
-    $(storesel).on('select2:select', function (e) {
-        localStorage.setItem(tag_selectedStoreId, $(storesel).val());
-    });
+    // $(storesel).on('select2:select', function (e) {
+    //     localStorage.setItem(tag_selectedStoreId, $(storesel).val());
+    // });
 
 });
 
@@ -55,6 +64,11 @@ var createBarcodeText = function (expireDate, cdStore, discount) {
     return retval;
 }
 
+var newValidRandomMoment = function(){
+    var date = moment().add(Math.floor(Math.random() * (25 - 15 + 1)) + 15, 'days');
+    return date;
+}
+
 var displayBarcode = function (barcodeText) {
     $('#barcode').JsBarcode(barcodeText, {
         format: 'EAN13',
@@ -62,9 +76,9 @@ var displayBarcode = function (barcodeText) {
         lineColor: '#000000',
         fontSize: 20,
         height: 100,
-        width: '2.5',
+        width: 3,
         margin: 10,
-        textMargin: 2,
+        textMargin: 1,
         displayValue: true,
         font: 'monospace',
         fontOptions: '',
