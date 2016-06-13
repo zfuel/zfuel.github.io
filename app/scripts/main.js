@@ -2,8 +2,7 @@ var tag_selectedStoreId = 'selectedStoreId';
 
 $(document).ready(function () {
     var storesel = $('#cd-store-selector');
-    var datesel = $('#datetimepicker');
-    var datesel2 = $('#datepicker');
+    var datesel = $('#datepicker');
     var discountsel = $('#discount-amount-selector');
     var genform = $('#dicountgen-form');
 
@@ -18,17 +17,20 @@ $(document).ready(function () {
         $(storesel)
     }
 
-    // $(datesel).datetimepicker({
-    //     format: 'DD/MM/YYYY',
-    //     useCurrent: false,
-    //     minDate: moment(),
-    //     defaultDate: newValidRandomMoment()
-    // });
-
-    datesel2.pickadate({
+    datesel.pickadate({
         min : moment().toDate(),
         onStart : function(){
             this.set('select', newValidRandomMoment().toDate());
+        }
+    });
+
+    $('#datepickerbutton').on('click', function(evt){
+        console.log(this, evt, datesel.pickadate())
+        var open = datesel.data().pickadate.get('open')
+        console.log(open)
+        if(!open){
+            datesel.data().pickadate.open();
+            console.log(datesel.data().pickadate)
         }
     })
 
@@ -36,8 +38,7 @@ $(document).ready(function () {
         event.preventDefault();
 
         var selectedDiscount = $(discountsel).val();
-        var selectedDate = moment(datesel2.data('pickadate').get('select'))
-        // var selectedDate = $(datesel).data('DateTimePicker').date();
+        var selectedDate = moment(datesel.data().pickadate.get('select'))
         var selectedStore = $(storesel).val()
 
         var barcodeText = createBarcodeText(selectedDate, selectedStore, selectedDiscount)
