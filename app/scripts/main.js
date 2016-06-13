@@ -24,16 +24,6 @@ $(document).ready(function () {
         }
     });
 
-    $('#datepickerbutton').on('click', function(evt){
-        console.log(this, evt, datesel.pickadate())
-        var open = datesel.data().pickadate.get('open')
-        console.log(open)
-        if(!open){
-            datesel.data().pickadate.open();
-            console.log(datesel.data().pickadate)
-        }
-    })
-
     $(genform).on('submit', function (event) {
         event.preventDefault();
 
@@ -44,13 +34,11 @@ $(document).ready(function () {
         var barcodeText = createBarcodeText(selectedDate, selectedStore, selectedDiscount)
         displayBarcode(barcodeText);
 
+        //analyitcs log the form data
+        clicky.log(genform.serialize(),'Home');
+
         return false;
     });
-
-    // $(storesel).on('select2:select', function (e) {
-    //     localStorage.setItem(tag_selectedStoreId, $(storesel).val());
-    // });
-
 });
 
 var createBarcodeText = function (expireDate, cdStore, discount) {
