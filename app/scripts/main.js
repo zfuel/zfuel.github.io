@@ -14,7 +14,7 @@ $(document).ready(function () {
     if (selctd !== null) {
         $(storesel).val(selctd).trigger('change');
     } else {
-        $(storesel)
+        
     }
 
     datesel.pickadate({
@@ -35,7 +35,9 @@ $(document).ready(function () {
         displayBarcode(barcodeText);
 
         //analyitcs log the form data
-        clicky.log(genform.serialize(),'Home');
+        if (typeof clicky !== 'undefined' && clicky !== null){ 
+            clicky.log('?'+genform.serialize(),'Home')
+        };
 
         return false;
     });
