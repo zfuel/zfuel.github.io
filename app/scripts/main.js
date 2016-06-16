@@ -1,6 +1,6 @@
-var tag_selectedStoreId = 'selectedStoreId';
-
 $(document).ready(function () {
+    var tag_selectedStoreId = 'selectedStoreId';
+
     var storesel = $('#cd-store-selector');
     var datesel = $('#datepicker');
     var discountsel = $('#discount-amount-selector');
@@ -9,12 +9,16 @@ $(document).ready(function () {
     $(storesel).select2({
         theme: 'bootstrap'
     });
+    $(storesel).on('select2:select', function (e) {
+        localStorage.setItem(tag_selectedStoreId, $(storesel).val());
+    });
 
     var selctd = localStorage.getItem(tag_selectedStoreId);
     if (selctd !== null) {
         $(storesel).val(selctd).trigger('change');
     } else {
-        
+        var size = $(storesel)[0].length;
+        $(storesel).val(storesel[0][Math.floor(Math.random() * size)].value).trigger('change')
     }
 
     datesel.pickadate({
